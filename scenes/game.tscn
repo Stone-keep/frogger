@@ -24,14 +24,8 @@ distance = -185.0
 script = ExtResource("1_lbhrr")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1771321927]
-position = Vector2(192, 320)
+position = Vector2(192, 319)
 texture = ExtResource("1_uwrxv")
-
-[node name="Player" parent="." unique_id=589001684 instance=ExtResource("2_yqjtg")]
-position = Vector2(189, 523)
-
-[node name="Tree" parent="." unique_id=1820739647 instance=ExtResource("3_lnu2h")]
-position = Vector2(286, 515)
 
 [node name="GameBorders" type="StaticBody2D" parent="." unique_id=851147340]
 
@@ -59,7 +53,15 @@ polygon = PackedVector2Array(-2, 125, 390, 125, 390, 85, -2, 85)
 [node name="Timers" type="Node2D" parent="." unique_id=739349194]
 
 [node name="CarTimer" type="Timer" parent="Timers" unique_id=1061949134]
-wait_time = 4.0
 autostart = true
 
+[node name="Objects" type="Node2D" parent="." unique_id=119748262]
+
+[node name="Player" parent="Objects" unique_id=589001684 instance=ExtResource("2_yqjtg")]
+position = Vector2(189, 523)
+
+[node name="Tree" parent="Objects" unique_id=1820739647 instance=ExtResource("3_lnu2h")]
+position = Vector2(286, 515)
+
 [connection signal="body_entered" from="WinArea" to="." method="_on_win_area_body_entered"]
+[connection signal="timeout" from="Timers/CarTimer" to="." method="_on_car_timer_timeout"]
