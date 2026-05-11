@@ -11,7 +11,7 @@ collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_qt2eu")
 
-[node name="Green" type="Sprite2D" parent="." unique_id=762022028]
+[node name="CarSprite" type="Sprite2D" parent="." unique_id=762022028]
 texture = ExtResource("1_c35m8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1684194129]
