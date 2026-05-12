@@ -2,7 +2,7 @@ extends Area2D
 
 
 var direction := Vector2.LEFT
-var speed := 75
+var speed := 85
 var colors := [
 	preload("res://graphics/cars/green.png"),
 	preload("res://graphics/cars/red.png"),
