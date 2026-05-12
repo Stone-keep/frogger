@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cxutqp0hti8vw" path="res://graphics/objects/bench.png" id="21_e1j6l"]
 [ext_resource type="Texture2D" uid="uid://cuqeolw7yvunc" path="res://graphics/objects/box3.png" id="23_bhx41"]
 [ext_resource type="Texture2D" uid="uid://y78osdw0bolc" path="res://graphics/objects/box1.png" id="23_bt5mj"]
+[ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://fonts/Better VCR 9.0.1.ttf" id="24_e1j6l"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
 normal = Vector2(1, 0)
@@ -67,7 +68,7 @@ size = Vector2(15, 6)
 size = Vector2(95, 69)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qouja"]
-size = Vector2(74, 101)
+size = Vector2(74, 96)
 
 [node name="Game" type="Node2D" unique_id=1448872879]
 script = ExtResource("1_lbhrr")
@@ -374,7 +375,7 @@ position = Vector2(132.5, 180.5)
 shape = SubResource("RectangleShape2D_sgl2t")
 
 [node name="CollisionShape2D28" type="CollisionShape2D" parent="Objects/Obstacles/ObstaclesCollision" unique_id=805269896]
-position = Vector2(-187, 165.5)
+position = Vector2(-189, 175)
 shape = SubResource("RectangleShape2D_qouja")
 
 [node name="Tree17" type="Sprite2D" parent="Objects/Obstacles" unique_id=104008919]
@@ -398,7 +399,7 @@ position = Vector2(335, 579)
 texture = ExtResource("14_qnb83")
 
 [node name="House2" type="Sprite2D" parent="Objects/Obstacles" unique_id=874081657]
-position = Vector2(13, 564)
+position = Vector2(12, 571)
 texture = ExtResource("15_sww3w")
 
 [node name="House3" type="Sprite2D" parent="Objects/Obstacles" unique_id=1702826449]
@@ -553,21 +554,24 @@ position = Vector2(395, 301)
 [node name="Marker2D15" type="Marker2D" parent="CarStartPositions" unique_id=236869203]
 position = Vector2(395, 268)
 
-[node name="UI" type="Node2D" parent="." unique_id=1440188046]
+[node name="HUD" type="Node2D" parent="." unique_id=1440188046]
 position = Vector2(132, 125)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="UI" unique_id=1753643119]
+[node name="CanvasLayer" type="CanvasLayer" parent="HUD" unique_id=1753643119]
 
-[node name="TimePassed" type="Label" parent="UI/CanvasLayer" unique_id=684800349]
-anchors_preset = 5
+[node name="TimePassed" type="Label" parent="HUD/CanvasLayer" unique_id=684800349]
+anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -57.0
+offset_top = 10.0
 offset_right = 57.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("24_e1j6l")
 theme_override_font_sizes/font_size = 40
 text = "Time Passed: 0 seconds"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="GameBorders/WinArea" to="." method="_on_win_area_body_entered"]
 [connection signal="timeout" from="Timers/CarTimer" to="." method="_on_car_timer_timeout"]

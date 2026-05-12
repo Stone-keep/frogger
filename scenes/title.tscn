@@ -53,13 +53,13 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_wosw1")
 
-[node name="HighScore" type="Label" parent="." unique_id=2038153314]
+[node name="FinishedIn" type="Label" parent="." unique_id=2038153314]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.645
+anchor_top = 0.634
 anchor_right = 0.5
-anchor_bottom = 0.656
+anchor_bottom = 0.734
 offset_left = -50.5
 offset_top = -11.5
 offset_right = 50.5
@@ -68,4 +68,4 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_p6dhs")
 theme_override_font_sizes/font_size = 40
-text = "High Score: 0"
+text = "Finished In: 0 seconds"
