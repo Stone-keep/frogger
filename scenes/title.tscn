@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bg46h5x2n6eev"]
 
 [ext_resource type="FontFile" uid="uid://dr201ov4c76pb" path="res://fonts/Crackman.otf" id="1_4ignj"]
+[ext_resource type="Script" uid="uid://b7ytu68u08vc1" path="res://scenes/title.gd" id="1_b3w7a"]
 [ext_resource type="Texture2D" uid="uid://bkgrir378horu" path="res://graphics/player/player_simple.png" id="2_wosw1"]
 [ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://fonts/Better VCR 9.0.1.ttf" id="3_p6dhs"]
 
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_b3w7a")
 
 [node name="TitleBackground" type="ColorRect" parent="." unique_id=1729824521]
 layout_mode = 1
@@ -53,13 +55,13 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_wosw1")
 
-[node name="FinishedIn" type="Label" parent="." unique_id=2038153314]
+[node name="BestTime" type="Label" parent="." unique_id=2038153314]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.634
+anchor_top = 0.68
 anchor_right = 0.5
-anchor_bottom = 0.734
+anchor_bottom = 0.68
 offset_left = -50.5
 offset_top = -11.5
 offset_right = 50.5
@@ -68,4 +70,20 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_p6dhs")
 theme_override_font_sizes/font_size = 40
-text = "Finished In: 0 seconds"
+text = "Best Time: 0 seconds"
+
+[node name="Label" type="Label" parent="." unique_id=2071457221]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.889
+anchor_right = 0.5
+anchor_bottom = 0.889
+offset_left = -375.0
+offset_top = -50.0
+offset_right = 375.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 40
+text = "Press Space To Play Again"

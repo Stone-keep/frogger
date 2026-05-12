@@ -9,8 +9,6 @@ func _physics_process(delta: float) -> void:
 	velocity = direction * speed * delta
 	move_and_slide()
 	walking_animation()
-	if Input.is_action_just_pressed("confirm"):
-		print("something")
 
 func walking_animation():
 	if direction.x:
