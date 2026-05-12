@@ -1,6 +1,7 @@
 extends Node2D
 
 var car_scene: PackedScene = preload("car.tscn")
+var game_timer := 0
 
 func _on_win_area_body_entered(body: Node2D) -> void:
 	if body == $Objects/Player:
@@ -15,3 +16,7 @@ func _on_car_timer_timeout() -> void:
 
 func go_to_title(_body):
 	print("player crashed with a car")
+
+func _game_timer_second() -> void:
+	game_timer += 1
+	$UI/CanvasLayer/TimePassed.text = "Time Passed: %s seconds" % game_timer

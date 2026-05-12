@@ -12,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1729824521]
+[node name="TitleBackground" type="ColorRect" parent="." unique_id=1729824521]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.49601173, 0.3885295, 0.8999961, 1)
 
-[node name="Label" type="Label" parent="." unique_id=475956694]
+[node name="GameTitle" type="Label" parent="." unique_id=475956694]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -38,7 +38,7 @@ theme_override_fonts/font = ExtResource("1_4ignj")
 theme_override_font_sizes/font_size = 140
 text = "Carrger Game"
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=375371877]
+[node name="PlayerSprite" type="TextureRect" parent="." unique_id=375371877]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -53,7 +53,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_wosw1")
 
-[node name="Label2" type="Label" parent="." unique_id=2038153314]
+[node name="HighScore" type="Label" parent="." unique_id=2038153314]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5

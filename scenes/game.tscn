@@ -116,6 +116,10 @@ polygon = PackedVector2Array(-2, 127, 390, 127, 390, 85, -2, 85)
 wait_time = 0.15
 autostart = true
 
+[node name="GameTimer" type="Timer" parent="Timers" unique_id=1263032079]
+autostart = true
+ignore_time_scale = true
+
 [node name="Objects" type="Node2D" parent="." unique_id=119748262]
 y_sort_enabled = true
 
@@ -493,6 +497,30 @@ texture = ExtResource("21_e1j6l")
 position = Vector2(105, 564)
 texture = ExtResource("17_sgl2t")
 
+[node name="Bench3" type="Sprite2D" parent="Objects/Obstacles" unique_id=279184701]
+position = Vector2(297, 108)
+texture = ExtResource("21_e1j6l")
+
+[node name="Box1" type="Sprite2D" parent="Objects/Obstacles" unique_id=1326393206]
+position = Vector2(110, 104)
+texture = ExtResource("23_bt5mj")
+
+[node name="Bin6" type="Sprite2D" parent="Objects/Obstacles" unique_id=1233552204]
+position = Vector2(297, 117)
+texture = ExtResource("17_sgl2t")
+
+[node name="Taxi2" type="Sprite2D" parent="Objects/Obstacles" unique_id=1047382972]
+position = Vector2(127, 107)
+texture = ExtResource("7_1kice")
+
+[node name="GreenCar2" type="Sprite2D" parent="Objects/Obstacles" unique_id=1903871303]
+position = Vector2(147, 108)
+texture = ExtResource("13_bhx41")
+
+[node name="RedCar2" type="Sprite2D" parent="Objects/Obstacles" unique_id=32720294]
+position = Vector2(167, 107)
+texture = ExtResource("6_264po")
+
 [node name="CarStartPositions" type="Node2D" parent="." unique_id=1316575899]
 
 [node name="Marker2D" type="Marker2D" parent="CarStartPositions" unique_id=1690434356]
@@ -525,32 +553,25 @@ position = Vector2(395, 301)
 [node name="Marker2D15" type="Marker2D" parent="CarStartPositions" unique_id=236869203]
 position = Vector2(395, 268)
 
-[node name="Bench" type="Sprite2D" parent="." unique_id=279184701]
-position = Vector2(297, 108)
-texture = ExtResource("21_e1j6l")
+[node name="UI" type="Node2D" parent="." unique_id=1440188046]
+position = Vector2(132, 125)
 
-[node name="Box1" type="Sprite2D" parent="." unique_id=1326393206]
-position = Vector2(110, 104)
-texture = ExtResource("23_bt5mj")
+[node name="CanvasLayer" type="CanvasLayer" parent="UI" unique_id=1753643119]
 
-[node name="Bin" type="Sprite2D" parent="." unique_id=1233552204]
-position = Vector2(297, 117)
-texture = ExtResource("17_sgl2t")
-
-[node name="Taxi" type="Sprite2D" parent="." unique_id=1047382972]
-position = Vector2(127, 107)
-texture = ExtResource("7_1kice")
-
-[node name="GreenCar" type="Sprite2D" parent="." unique_id=1903871303]
-position = Vector2(147, 108)
-texture = ExtResource("13_bhx41")
-
-[node name="RedCar" type="Sprite2D" parent="." unique_id=32720294]
-position = Vector2(167, 107)
-texture = ExtResource("6_264po")
+[node name="TimePassed" type="Label" parent="UI/CanvasLayer" unique_id=684800349]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -57.0
+offset_right = 57.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Time Passed: 0 seconds"
 
 [connection signal="body_entered" from="GameBorders/WinArea" to="." method="_on_win_area_body_entered"]
 [connection signal="timeout" from="Timers/CarTimer" to="." method="_on_car_timer_timeout"]
+[connection signal="timeout" from="Timers/GameTimer" to="." method="_game_timer_second"]
 
 [editable path="Objects/Obstacles/Tree4"]
 [editable path="Objects/Obstacles/Tree5"]
